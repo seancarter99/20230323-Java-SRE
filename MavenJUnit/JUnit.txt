@@ -1,0 +1,20 @@
+WHAT IS UNIT TESTING?
+
+- Unit testing is the idea of writing tests for individual pieces of code (units)
+	- units can be methods, constructors, etc.
+- we should attempt to "break" the code however possible to meet our quality criteria
+- we should also strive for 100% code coverage
+	- not always possible, but that's the goal
+- try to test "edge cases" -- null values, large/small numbers, prime numbers, min/max values, empty Strings
+
+
+TDD -- Test-Driven Development
+- in test-driven development, we're writing test immediately after writing code
+- OR, quite often, writing tests BEFORE we write the code
+- this ensures that code is written carefully and that the developer is anticipating the potential problems
+
+
+JUNIT -- Java Unit Testing
+- the most widely-used library for Java testing
+- you can write individual tests for various functions
+- you can use setup/breakdown to create/remove resources before/after your tests
