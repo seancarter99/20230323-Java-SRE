@@ -1,0 +1,127 @@
+WHAT IS MAVEN?
+
+- Created by Apache to reduce/manage the complexity of Java projects/builds
+- Maven is a build tool
+	- has several steps it takes to build/test/install/deploy a project
+- also functions as a package manager
+	- if you have other software that your project depends on, Maven takes care of that management
+- streamlines the build process
+- replaced its predecessor Ant; it's easier to use
+- it uses a file called POM.xml to manage dependencies, properties, etc.
+- encourages best practices throughout, as it WILL NOT build the project if there are functional errors
+
+WHY USE IT?
+- prevents us from having to go out on the internet and manually bring in dependent software we need
+	- or coding it ourselves, which would be worse!
+- online, there's a central repository where all the available software lives
+- when compiling our Maven project, it takes the little pieces we're using (dependencies) and packages them up into little JAR or WAR files for our use (or use on future Maven projects)
+	- JAR stands for Java ARchive, basically a compressed and packaged-up version of your project
+	- WAR stands for Web ARchive, which is similar
+- Maven is the most widely used build tool (Gradle is another popular one)
+
+
+
+CREATING A MAVEN PROJECT
+
+New > Other > Maven > Maven Project
+
+Can select an archetype to use a template Maven project if you wish
+
+Group ID -- commonly used for denoting a company or organization
+	- if you have subdomains, it's common to append it to existing subdomains
+
+Artifact ID -- just a naming reference for the project itself
+- name is by convention all lowercase, no spaces
+
+Version
+First digit = major version (X.0.0)
+Second digit = minor version (0.X.0)
+Third digit = patch version (0.0.X)
+
+Packaging
+- can pick JAR or WAR (POM not really applicable for us)
+- this is the output format for our project
+
+Name -- the "human-readable" name for your project
+- so you'd usually turn the artifact ID into a regular syntax
+- this is OPTIONAL
+
+Description -- "human-readable" description of your project
+- also OPTIONAL
+
+Parent Project -- if you wish to "inherit" another project into this one, you can set that up here
+- also OPTIONAL
+- if you have a configuration/setup from another project you'd like to use, you can include that project's coordinates here
+
+
+PROJECT STRUCTURE
+
+src/main/java -- where your actual program files will live
+
+src/main/resources -- static assets (HTML/CSS files, images, etc.)
+	- configuration files (properties, .json, .env)
+
+src/test/java -- all our test files will live here
+	- these get used AUTOMATICALLY when we build
+
+src/test/resources -- includes config files for the tests
+	- also any static assets we'd need for the tests
+
+JRE -- says which version of the JRE we're using
+	- Maven does default to using 1.5 -- CAN CHANGE IT!!
+
+src -- this is where Maven puts code at runtime
+	- DON'T WRITE YOUR CODE HERE!
+
+target -- this is where output files will live (JAR, WAR files, etc.)
+
+POM.xml -- our main configuration/setup file for the project
+
+WHEN YOU UPDATE YOUR POM.XML, right-click on it, then select Maven > Update Project... to update the entire project to match the config in POM.xml
+
+
+POM.XML
+
+- all config details for our project live here
+- similar to package.json from NPM
+- split into two main areas -- properties and dependencies
+
+- properties are config details
+
+- dependencies are other pieces of software we need
+	- Maven will automatically download and incorporate them
+	- all downloaded dependencies live in the .m2 folder
+- you can add a scope to a particular dependency (OPTIONAL)
+	- meaning, this dependency will only apply up to a certain step
+	- by default, the dependency is scoped globally
+
+
+MAVEN BUILD LIFECYCLE
+- seven "phases" of the build
+- if there's an issue at any phase, the build stops
+
+1. Validate
+- ensures that everything the project requires is present
+- fails if coordinates are missing, etc.
+
+2. Compile
+- compiles the source code (src/main/java)
+- if there are compilation errors, it fails
+
+3. Test
+- run all the unit test we have written on the compiled code
+- anything we have in src/test/java
+- fails if ANY test fails
+
+4. Package
+- packs up the compiled code into the proper format (JAR, WAR, etc.)
+
+5. Verify
+- runs integrity test on packaged code
+- fails if the package doesn't pass the integrity test
+
+6. Install
+- adds the packaged file to our local repository (.m2)
+
+7. Deploy
+- publish the created file to the Maven Central Repository
