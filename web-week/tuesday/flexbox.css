@@ -1,0 +1,36 @@
+/* 
+    Everything in this file is the CSS code
+
+    Advantage is you can reuse for multiple pages
+*/
+
+.container {
+    /* Indicates that this is a flex box */
+    display: flex;
+    flex-direction: row;
+    /* How the items are horizontally organized */
+    justify-content: flex-start;
+    
+    height: 300px;
+    /* How the items are vertically organized */
+    align-items: center;
+
+    background-color: gray;
+
+}
+
+.item {
+    padding: 20px 20px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}

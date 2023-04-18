@@ -62,6 +62,26 @@
 
         <div id="663-4455-550">Sean Carter</div>
 
+        <!-- Radio buttons with the same name, are in the same group -->
+        <b>Have you bought a car in the last year?</b>
+        <div>
+            <label for="commute-yes">Yes</label> 
+            <input id="commute-yes" type="radio" name="commute" value="yes" />
+            <label for="commute-no">No</label> 
+            <input id="commute-no" type="radio" name="commute" value="no" />
+        </div>
+        
+        <!-- Checkboxes are for selecting multiple answer -->
+        <div>
+            <b>Which of the following pets do you own?</b>
+            <label for="dog">Dog</label>
+            <input id="dog" name="pet" type="checkbox" value="dog">
+            <label for="cat">Cat</label>
+            <input id="cat" name="pet" type="checkbox" value="cat">
+            <label for="fish">Fish</label>
+            <input id="fish" name="pet" type="checkbox" value="fish">
+        </div>
+
         <button type="reset">Reset</button>
         <button type="submit">Submit</button>
     </form>

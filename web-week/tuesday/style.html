@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Style Tag -->
+    <style>
+
+        html, body {
+            margin: 0px;
+        }
+
+        /* * {
+            margin: 0px;
+        } */
+
+        /* 
+            Everything in here is CSS
+
+            Selectors:
+
+            1. Tag (div, input, form)
+            2. Class (Classifying like elements together)
+            3. Id
+        */
+
+        div {
+            color: blue;
+        }
+
+
+        .header-text {
+            /* Logic in here styles all elements with header-text as a class */
+            font-size: 50px;
+            color: green !important; /* A property be overridden */
+        }
+
+        /* . indicates class */
+        .blue {
+            /* Logic in here styles all elements with blue as a class */
+            color: blue;
+        }
+
+       
+        /* # indicates id */
+        #my-special-div {
+            font-size: 100px;
+            background-color: #6aff6f;
+            color: red;
+        }
+
+
+        .box {
+            /* 
+                CSS Box Model
+
+                Content - Data that the elements holds (This could be more HTML elements)
+                Padding - The space between the border and the content (nothing can go here)
+                Border - The invisble barrier that surrounds the content
+                Margin - The space between the border and the border of other HTML elements
+            */
+            border: 1px solid black;
+            border-radius: 50px;
+            text-align: center;
+            width: 100vh;
+            
+            /* Applies 10px margin to ALL sides */
+            /* margin: 10px; */
+
+            /* Top/Bottom Left/Right */
+            /* Applies 10px margin to just the top and bottom */
+            /* margin: 10px 0px; */
+
+            /* Top Left/Right Bottom */
+            /* margin: 10px 50px 0px; */
+
+            /* NESW */
+            /* Top Right Bottom Left */
+            /* Avoid using absolute units as they are fixed regardless of screen size */
+            /* margin: 10px 150px 30px 150px; */
+            background-color: gray;
+            color: #ffffff;
+
+            padding: 20px 50px;
+
+            /* When this property changes, do it over 3 seconds */
+            transition: background-color 3s;
+            transition: width 5s;
+        }
+
+        /* Pseudo Selector */
+        .box:hover {
+            background-color: salmon;
+            color: black;
+            width: 50%;
+        }
+
+        /* 
+        
+            Absolute Sizing:
+            - px
+            - cm
+            - in
+
+            Relative Sizing
+            - em (Based on the font size of parent element)
+            - rem (Based on the font size of the root element)
+            - percents
+            - vh (view height)
+            - vw (view width)
+        */
+
+        #text-box {
+            font-size: 100px;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding-top: 2em;
+        }
+
+
+        @media (max-width: 500px) {
+            #text-box {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            #text-box {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="text-box">My Box</div>
+
+    <!-- 
+        3 Options for Styling
+
+        1. Inline Styles (I do not recommend)
+        2. Style Tag
+        3. External Stylesheet
+     -->
+
+     <!-- Inline Style. Applying styles directly on the element -->
+     <div style="color: red;">My Div</div>
+     <span class="blue header-text">My Second Div</span>
+     <div id="my-special-div">Sean's Div</div>
+
+     <div class="box">My Box</div>
+
+     <div class="box">My Second Box</div>
+</body>
+</html>
