@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- 
+        In HTML we have input tag as a way to gather user input
+
+        Input types:
+        - text (default)
+        - number
+        - image (image upload)
+        - button (I recommend using the button tag)
+        - email
+        - password
+        - date
+        - color
+        - radio
+        - checkbox
+     -->
+
+     <input type="text" />
+     <input type="password" />
+     <input type="color" />
+     <input type="date" />
+
+
+     <!-- Form Element
+        Block element
+        
+        method - HTTP Method (HTML Forms only support GET/POST)
+        action - URL endpoint to shoot HTTP request to
+    -->
+
+    <!-- GET by default -->
+    <form method="GET" action="https://www.google.com">
+
+        <!-- Button's default behavior changes based off its parent
+             Inside a form, its default is to be a "submit" button
+             Outside of one, its just a regular button
+        -->
+        <!-- Occupation of person -->
+        <!-- for attribute links to the id of the input -->
+        <!-- name is used by the form submission. In the form data, look under occupation property for the value -->
+        <label for="occupation">Occupation</label>
+        <input id="occupation" name="o" type="text" placeholder="Ex. Barista" required />
+
+        <!-- Age of person -->
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" />
+
+        <!-- Dropdown box -->
+        <select name="country">
+            <option>Please select a country</option>
+            <option>United States</option>
+            <option>Nepal</option>
+        </select>
+
+        <div id="663-4455-550">Sean Carter</div>
+
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
