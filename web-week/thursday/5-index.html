@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pairing With JS</title>
+    <script src="./6-index.js" defer>
+        // All of this is JS code
+    </script>
+    <style>
+        * {
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            height: 4rem; /* 4 * 32px */
+            width: 4rem;
+            background-color: cadetblue;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- I hit a button and it creates an element -->
+    <button id="create-box-button">Create Box</button>
+    <div class="container" id="box-container">
+        <!-- Empty to start, but clicking the button adds a div to this box -->
+    </div>
+    
+</body>
+</html>
