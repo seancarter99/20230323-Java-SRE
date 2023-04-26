@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import ThemeContext from "../../contexts/theme";
 
 // This component can't unrender itself
 // But.. it's parent can
@@ -12,6 +13,7 @@ export default function Counter() {
     // useState takes the default value of the state as a parameter
     // useState returns an array with the 0 index as the state variable and the 1 index as the setter for it
     const [count, setCount] = useState(0);
+    const theme = useContext(ThemeContext);
 
     /**
      * useState() {
@@ -80,11 +82,11 @@ export default function Counter() {
         // This is a fragment. It provides us a way to return multiple JSX elements
         // Fragments are NOT rendered in the HTML document
 
-        <>
+        <div style={theme}>
             {/* This is a JSX comment. It does NOT appear in the browser */}
             <h1>Current Count: {count}</h1>
             <button onClick={increment}>+</button>
             <button>-</button>
-        </>
+        </div>
     );
 }

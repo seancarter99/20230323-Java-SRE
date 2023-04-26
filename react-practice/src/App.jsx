@@ -2,6 +2,9 @@
 import { useState } from "react";
 import { Article } from "./components/Article/Article";
 import Counter from "./components/Counter/Counter";
+import RefExample from "./components/RefExample/RefExample";
+import ThemeContext, { themes } from "./contexts/theme";
+import { useTranslation } from "react-i18next";
 import './index.css';
 
 // function App() {}
@@ -9,10 +12,23 @@ import './index.css';
 const App = () => {
     console.log('App!')
     const [shouldRender, setShouldRender] = useState(false);
+    const [theme, setTheme] = useState(themes.light);
+
+    const { t, i18n } = useTranslation();
+
+    const toggleTheme = () => {
+        let newTheme = theme === themes.light ? themes.dark : themes.light;
+        setTheme(newTheme);
+    }
+
+    const changeLanguage = lng => {
+        i18n.changeLanguage(lng);
+    }
 
     return (
-        <>
+        <ThemeContext.Provider value={theme}>
             <h1>Hello World!</h1>
+            <button onClick={toggleTheme}>Toggle Theme!</button>
             <button onClick={() => setShouldRender(!shouldRender)}>Toggle Counter</button>
             {/* If shouldRender is truthy, return the right side */}
             {/* If shouldRender is falsy, return the left side */}
@@ -20,6 +36,7 @@ const App = () => {
             {/* {shouldRender ? <Counter /> : null} */}
             {/* <Counter /> */}
             {/* <Counter /> */}
+            <RefExample />
 
             <Article title="Reasons to Use Angular" author="Sylvia">
                 <div>There is no reason</div>
@@ -28,7 +45,15 @@ const App = () => {
                 <p>React is awesome!</p>
                 <p>End of story!</p>
             </Article>
-        </>
+            <Article title="My Article" date={new Date().toString()} author="Sean">
+                <p>{t('Greeting')}</p>
+                <p>{t('Description')}</p>
+            </Article>
+            <div>
+                <button onClick={() => changeLanguage('en')}>{t('EN')}</button>
+                <button onClick={() => changeLanguage('de')}>{t('DE')}</button>
+            </div>
+        </ThemeContext.Provider>
     );
 }
 
