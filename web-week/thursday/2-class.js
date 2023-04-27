@@ -12,6 +12,9 @@ const obj = {};
 // No access modifiers in JS (there is in TypeScript)
 class Bird {
 
+    /**
+     * A variable specifying a bird's color
+     */
     color;
     wingSpan;
 

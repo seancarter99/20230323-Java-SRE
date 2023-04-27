@@ -4,8 +4,11 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 i18n.use(initReactI18next).init({
+    // Required
     resources: {
+        // Call it what you want
         en: {
+            // Required
             translation: {
                 "Greeting": "Hello! Welcome to my app!",
                 "Description": "This app was developed by Sean.",
