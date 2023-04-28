@@ -30,6 +30,21 @@ export const storeApi = createApi({
                     body: store
                 }
             }
+        }),
+        updateStore: builder.mutation<Store, Store>({
+            query: store => ({
+                method: 'PUT',
+                url: `/stores/${store.id}`,
+                body: store
+            })
+        }),
+        deleteStore: builder.mutation<void, number>({
+            query: id => {
+                return {
+                    method: 'DELETE',
+                    url: `/stores/${id}`
+                }
+            }
         })
     })
 });
@@ -37,5 +52,7 @@ export const storeApi = createApi({
 export const {
     useFindAllStoresQuery,
     useFindStoreByIdQuery,
-    useCreateStoreMutation
+    useCreateStoreMutation,
+    useUpdateStoreMutation,
+    useDeleteStoreMutation
 } = storeApi;

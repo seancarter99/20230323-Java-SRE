@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { Store, useCreateStoreMutation, useFindAllStoresQuery } from "./api/storeApi";
+import { Store as StoreType, useCreateStoreMutation, useDeleteStoreMutation, useFindAllStoresQuery, useUpdateStoreMutation } from "./api/storeApi";
 import { Counter } from "./components/Counter"
 import { Display } from "./components/Display"
+import "./App.css";
+import { Store } from "./components/Store";
 
 // type StoresResponse = {
 //   id: number;
@@ -43,6 +45,8 @@ function App() {
   // Fetch all movies using my custom hook
   const { data: stores, refetch } = useFindAllStoresQuery();
   const [createStore] = useCreateStoreMutation();
+  const [updateStore] = useUpdateStoreMutation();
+  const [deleteStore] = useDeleteStoreMutation();
 
   const nameRef = useRef<HTMLInputElement>(null);
   const addressRef = useRef<HTMLInputElement>(null);
@@ -54,14 +58,25 @@ function App() {
     event.preventDefault();
 
     // I can use createStore from the mutation hook to create the store itself
-    const newStore: Store = {
+    const newStore: StoreType = {
       name: String(nameRef?.current?.value),
       address: String(addressRef?.current?.value),
       squareFootage: Number(squareFootageRef?.current?.value)
     }
 
-    createStore(newStore);
-    refetch(); // Refetch the stores
+    // This is an asynchronous request
+    createStore(newStore)
+      .unwrap() // returns a Promise of the HTTP Response
+      .then(() => refetch()); // refetches the data // Pessimistic update
+
+    // Ensure that the store is created, THEN we fetch
+  }
+
+  // If they don't pass in a id, use 0
+  function handleDelete(id: number = 0) {
+    deleteStore(id)
+      .unwrap()
+      .then(() => refetch());
   }
 
   return (
@@ -90,10 +105,7 @@ function App() {
         return (
           // By default, uses index (BAD if you re-order/sort the array)
           // If you have an id, ALWAYS use that
-          <div key={store.id}>
-            <h2>{store.name}</h2>
-            <h3>{store.address}</h3>
-          </div>
+          <Store key={store.id} store={store} handleDelete={handleDelete} />
         )
       })}
     </>
