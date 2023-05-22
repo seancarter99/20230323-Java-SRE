@@ -20,7 +20,8 @@ import com.skillstorm.demo.dtos.StoreDto;
 import com.skillstorm.demo.services.StoreService;
 
 @RestController // @Controller + @ResponseBody on every method
-@RequestMapping("/stores")
+@RequestMapping("/stores") 
+@CrossOrigin // By default allows ALL origins access
 public class StoreController {
 
 	// Get controller to talk to service
