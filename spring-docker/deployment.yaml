@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-docker-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-docker
+  template:
+    metadata:
+      labels:
+        app: spring-docker
+    spec:
+      containers:
+      - name: spring-docker
+        image: seancarter99/spring-docker
+        ports:
+          - containerPort: 8080
