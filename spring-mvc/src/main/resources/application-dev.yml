@@ -1,0 +1,4 @@
+logging:
+  level:
+    '[com.skillstorm.demo]': DEBUG
+    '[org.springframework]': DEBUG

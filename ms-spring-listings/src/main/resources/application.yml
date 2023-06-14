@@ -1,11 +1,20 @@
 spring:
   application:
     name: ms-spring-listings
+  rabbitmq:
+    host: localhost
+    port: 5672
 
 server:
-  port: 8080
+  port: 8082
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+      
+queues:
+  fanout: paymentQueue
+  
+exchanges:
+  fanout: payment
