@@ -270,6 +270,7 @@
 - **Query Parameters**
 - Idempotency
 - Safety
+- Internationalization (i18n)
 
 ### HTTP Response
 - **Status Code**
@@ -322,3 +323,267 @@
 ### CSS
 - **Styling**
 - **CSS Selectors**
+- **CSS Box Model**
+- **Flex Box**
+- **Absolute vs Relative Units**
+- Pseudo Classes and Selectors
+- Flex Grid
+- Transitions
+
+### JavaScript
+- **Variable Scopes**
+- **Objects**
+- **Truthy/Falsy**
+- **Null and Undefined**
+- **Closures**
+- **Higher Order Functions**
+- **Spread and Rest Operators**
+- Variable Hoisting
+- Template Literals
+- Prototypes
+- Optional Chaining Operator
+- Nullish Coallescing Operator
+- Node.js
+- TypeScript
+
+#### DOM
+- **Document Object Model**
+- **Events**
+- document.getElement
+- document.createElement
+- HTML Forms
+- innerHTML and innerText
+- XSS
+
+#### Asynchronous JavaScript
+- **JavaScript Event Loop**
+- **Promises**
+- **AJAX**
+- setTimeout/setInterval/clearInterval
+- async and await
+
+### React
+- **Client Side Rendering**
+- **Server Side Rendering**
+- **Virtual DOM**
+- **Babel**
+- **ReactDOM**
+- **React Components**
+- **Component Lifecycle**
+- **React Rendering Process**
+- **state and props**
+- **React Context**
+- Vite
+- Rollup
+- ESBuild
+- Controlled vs Uncontrolled Components
+
+#### React Hooks
+- **useState**
+- **useEffect**
+- **useContext**
+- useRef
+- useReducer
+
+#### React Router DOM
+- **Client Side Routing**
+- **Routes**
+- History API
+- useNavigate
+- useParams
+- useLocation
+
+#### Redux
+- **Flux Design Pattern**
+- **Redux Toolkit**
+- **Redux Store**
+- **RTK Query**
+
+## AWS
+- **AWS Global Infrastructure**
+- **Availability Zones**
+- **Regions**
+- **IAM**
+  - **Users**
+  - **Roles**
+  - **Policies**
+- **AWS Organizations**
+  - Consolidated Billing
+- **AWS Accounts**
+- **Pricing**
+- **CloudWatch**
+  - **CloudWatch Logs**
+  - **CloudWatch Alarms**
+  - **CloudWatch Dashboards**
+- **CloudTrail**
+- **SQS**
+- **SNS**
+- **Migration and Adoption**
+- **AWS Well Architected Framework**
+- **Scalability**
+- **Elasticity**
+- **Availability**
+- **AWS Outposts**
+
+### Compute
+- **EC2**
+  - **AMI**
+  - **Instance Types**
+  - **Tenancy**
+  - **EBS**
+  - **Instance Stores**
+  - User Data
+- **ECS**
+- **EKS**
+- **Serverless Computing**
+  - **Lambda**
+    - **Lambda Triggers**
+    - AWS Step Functions
+  - **Fargate**
+  - **API Gateway**
+- **Auto Scaling**
+- Elastic Beanstalk
+
+### Storage
+- **S3**
+  - **Buckets**
+  - **Objects**
+  - **Object Versioning**
+  - **Storage Classes**
+  - **Bucket Policies**
+  - **Bucket Lifecycle Policies**
+- **CloudFront**
+- EFS
+- FSx
+
+### Databases
+- **RDS**
+  - **RDS Standby**
+  - **RDS Read Replicas**
+- **Amazon Aurora**
+- **DynamoDB**
+  - Read/Write Capacity Units
+- DocumentDB
+- ElastiCache
+- AWS Database Migration Service
+
+### Networking
+- **VPC**
+- **IGW**
+- **NAT**
+- **Public and Private Subnets**
+- **VPC Endpoints**
+- **VPC Peering**
+- **Security Groups**
+- **NACLs**
+- **AWS Direct Connect**
+- **Amazon Route 53**
+
+### Security
+- **KMS**
+- **Secrets Manager**
+- **Principals**
+- **Least Privilege**
+- **Service Control Policies**
+- AWS Shield
+- Trusted Advisor
+
+## DevOps
+- **Continuous Integration**
+- **Continous Deployment**
+- **CI/CD Pipelines**
+- **Environments**
+  - **dev**
+  - **prod**
+  - **staging**
+  - uat
+
+### GitHub
+- **Git**
+- **Git Commands**
+- **Git Branching**
+- **Version Control**
+- **Pull Requests**
+- **GitHub Actions**
+  - **Workflows**
+- GitHub Issues
+
+### Containerization
+
+#### Docker
+- **Docker**
+- **Containers vs VMs**
+- **Dockerfile**
+- **Docker Images**
+- **Docker Commands**
+- **DockerHub**
+- Docker Compose
+
+#### Kubernetes
+- **K8s**
+- **Pods**
+- **Nodes**
+- **Control Plane**
+- **Deployments**
+- **Services**
+- **Self Healing**
+- **kubectl**
+- **Load Balancing**
+
+## Microservices
+- **Microservices vs Monolith**
+- **Resiliency**
+
+### Cloud Native Design Patterns
+- **API Gateway**
+- **Client Breaker**
+  - **Cascading Failures**
+  - **Exponential Backoff**
+- **Service Discovery**
+- **Message Queues**
+  - **Pub/Sub**
+- **Sidecar**
+- Retry
+- Request Metering
+
+### Spring Cloud
+- **Spring Cloud Gateway**
+  - **Routing**
+  - **Common Responsibilities**
+- **Eureka Client**
+- **Eureka Server**
+- **Resilience4J Circuit Breaker**
+- **RabbitMQ**
+
+## SRE
+- **Reliability**
+- **SLIs**
+- **SLOs**
+- **SLA**
+- **Error Budgets**
+- **Alerting**
+- **PagerDuty**
+
+### Observability
+- **Monitoring vs Observability**
+- **Logs**
+- **Traces**
+- **Metrics**
+- **Unknown Unknowns**
+- **Telemetry**
+- **OpenTelemetry**
+  - **Spans**
+  - **Context**
+  - **Scope**
+  - **Automatic Instrumentation**
+  - **Manual Instrumentation**
+  - OpenTelemetry Collector
+- **Honeycomb**
+
+### Chaos Engineering
+- **Hypothesis**
+- **Experiments**
+- **Validation**
+- **Game Day Scenarios**
+- Chaos Monkey
+- AWS FIS
